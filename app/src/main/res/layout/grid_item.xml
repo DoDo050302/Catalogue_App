@@ -8,7 +8,7 @@
 
     <ImageView
         android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_height="250dp"
         android:scaleType="centerCrop"
         android:id="@+id/grid_image"/>
 
@@ -17,7 +17,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/item_name"
-        android:text="Rose"
+        android:fontFamily="sans-serif-medium"
+        android:text="Name"
+        android:textSize="26sp"
+        android:layout_marginTop="6dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prices"
+        android:text="150rs"
         android:textSize="26sp"
         android:layout_marginTop="6dp"/>
 

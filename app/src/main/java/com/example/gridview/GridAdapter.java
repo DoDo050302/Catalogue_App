@@ -11,20 +11,21 @@ import android.widget.TextView;
 public class GridAdapter extends BaseAdapter {
 
     Context context;
-    String[] flowerName;
+    String[] itemName;
     int[] image;
-
+    String[] prices;
     LayoutInflater inflater;
 
-    public GridAdapter(Context context, String[] flowerName, int[] image) {
+    public GridAdapter(Context context, String[] itemName, int[] image, String[] itemPrices) {
         this.context = context;
-        this.flowerName = flowerName;
+        this.itemName = itemName;
         this.image = image;
+        this.prices = itemPrices;
     }
 
     @Override
     public int getCount() {
-        return flowerName.length;
+        return itemName.length;
     }
 
     @Override
@@ -40,20 +41,22 @@ public class GridAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-       if (inflater == null)
-           inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        if (inflater == null)
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-       if (convertView == null){
+        if (convertView == null){
 
-           convertView = inflater.inflate(R.layout.grid_item,null);
+            convertView = inflater.inflate(R.layout.grid_item,null);
 
-       }
+        }
 
         ImageView imageView = convertView.findViewById(R.id.grid_image);
         TextView textView = convertView.findViewById(R.id.item_name);
+        TextView textpriceView = convertView.findViewById(R.id.prices);
 
         imageView.setImageResource(image[position]);
-        textView.setText(flowerName[position]);
+        textView.setText(itemName[position]);
+        textpriceView.setText(prices[position]);
 
         return convertView;
     }
